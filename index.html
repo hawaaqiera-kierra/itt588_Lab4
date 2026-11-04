@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keluarga Hassan | Salasilah</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app-shell">
+
+  <main class="main">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" id="brandMark">H</div>
+        <div>
+          <strong>Salasilah</strong>
+          <small>FAMILY ARCHIVE</small>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <span class="privacy"><i></i> Private family space</span>
+        <button class="avatar-button" id="avatarBtn" title="Family archive">KH</button>
+      </div>
+    </header>
+
+    <section class="page-heading">
+      <div class="hero-art" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          OUR FAMILY STORY
+        </div>
+        <h1 id="pageTitle">The Hassan family tree</h1>
+        <p id="pageSubtitle">
+          A little history, a lot of heart. Explore the people who make your family.
+        </p>
+      </div>
+
+      <button class="primary-btn" id="exploreBtn">
+        <span>＋</span> Explore family
+      </button>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <div class="stat-icon lavender">☀</div>
+        <div>
+          <span>Total family members</span>
+          <strong id="totalStat">12</strong>
+        </div>
+        <small class="stat-foot">Across 4 generations</small>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon peach">♡</div>
+        <div>
+          <span>Family branches</span>
+          <strong id="branchCount">2</strong>
+        </div>
+        <small class="stat-foot" id="branchNames">Ahmad Kamal &amp; Norliza</small>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-icon mint">⌂</div>
+        <div>
+          <span>Places connected</span>
+          <strong id="placeStat">3</strong>
+        </div>
+        <small class="stat-foot">Across the family</small>
+      </article>
+    </section>
+
+    <section class="workspace" id="treeView">
+
+      <div class="section-top">
+        <div>
+          <h2>Family connections</h2>
+          <p>Choose a person to learn more about them.</p>
+        </div>
+
+        <div class="tree-tools">
+          <label class="searchbox">
+            <span>⌕</span>
+            <input id="searchInput"
+                   placeholder="Find a family member..."
+                   autocomplete="off">
+            <kbd>⌘ K</kbd>
+          </label>
+
+          <button class="tool-btn" id="zoomOut" title="Zoom out">−</button>
+          <button class="tool-btn" id="zoomIn" title="Zoom in">+</button>
+          <button class="tool-btn" id="resetView" title="Reset view">↺</button>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="filter-pills" id="generationFilters">
+          <button class="pill selected" data-gen="all">All generations</button>
+          <button class="pill" data-gen="1">Grandparents</button>
+          <button class="pill" data-gen="2">Parents</button>
+          <button class="pill" data-gen="3">Children</button>
+          <button class="pill" data-gen="4">Grandchildren</button>
+        </div>
+
+        <div class="legend">
+          <span><i class="dot lavender-dot"></i> <span id="legendMain">Hassan</span></span>
+          <span><i class="dot peach-dot"></i> In-law</span>
+        </div>
+      </div>
+
+      <div class="tree-viewport" id="treeViewport">
+        <div class="tree-canvas" id="treeCanvas">
+          <div id="treeContent"></div>
+        </div>
+
+        <div class="empty-state hidden" id="emptyState">
+          No family members match your search.
+        </div>
+
+        <div class="canvas-hint">
+          Tip: select any card to view their profile
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace members-view hidden" id="membersView">
+      <div class="section-top">
+        <div>
+          <h2>Everyone in the family</h2>
+          <p>Browse the family archive in one place.</p>
+        </div>
+
+        <label class="searchbox">
+          <span>⌕</span>
+          <input id="memberSearch"
+                 placeholder="Search names, roles, places...">
+        </label>
+      </div>
+
+      <div class="member-grid" id="memberGrid"></div>
+    </section>
+
+    <footer>
+      Made with care for the people who came before us.
+      <span id="footBrand">HASSAN FAMILY ARCHIVE · EST. 1928</span>
+    </footer>
+
+  </main>
+</div>
+
+<div class="drawer-backdrop hidden" id="backdrop"></div>
+
+<aside class="profile-drawer" id="profileDrawer"
+       aria-label="Family member profile">
+  <button class="close-drawer" id="closeDrawer"
+          aria-label="Close profile">×</button>
+  <div id="profileContent"></div>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
