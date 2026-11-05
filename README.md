@@ -1,4 +1,4 @@
-# Kinfolk | Bennett Family Tree
+# Hassan Family Tree
 
 A responsive, interactive front-end family tree built with HTML, CSS, and vanilla JavaScript. Family information is loaded dynamically from `people.json`.
 
